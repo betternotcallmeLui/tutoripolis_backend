@@ -12,13 +12,13 @@ import bodyParser from 'body-parser';
 
 import socketio from 'socket.io';
 
-import config from './config/config';
+import config from './config/config.js';
 
-import authRoutes from './routes/auth';
-import teacherRoutes from './routes/teacher';
-import homeRoutes from './routes/homepage';
-import courseRoutes from './routes/coursepage';
-import stripeRoute from './routes/stripe';
+import authRoutes from './routes/auth.js';
+import teacherRoutes from './routes/teacher.js';
+import homeRoutes from './routes/homepage.js';
+import courseRoutes from './routes/coursepage.js';
+import stripeRoute from './routes/stripe.js';
 
 const { mongo, redisHost, redisPort, redisPassword } = config;
 
