@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { allCourses, fetchCourses, getPreferences, preferenceCourses } from '../controllers/homepage';
-import { authentication } from '../Authentication/is-auth';
+import { allCourses, fetchCourses, getPreferences, preferenceCourses } from '../controllers/homepage.controller.js';
+import { authentication } from '../Authentication/is-auth.js';
 
 const router = Router();
 

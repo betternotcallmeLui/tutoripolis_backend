@@ -3,7 +3,7 @@ import { check } from 'express-validator';
 
 import { signup, login, otpVerification, resetPassword, resendOtp, resetOtpVerification, newPassword } from '../controllers/auth.controller.js';
 import { googleLogin, googleSignUp } from '../controllers/googleAuth.controller.js';
-import Auth from '../Authentication/is-auth.js';
+import { GetnewAccessToken } from '../Authentication/is-auth.js';
 import User from '../model/user.model.js';
 
 const router = express.Router();
@@ -51,6 +51,6 @@ router.post('/signup/reset-password', newPassword);
 router.post("/google_login", googleLogin);
 router.post("/google_signup", googleSignUp);
 
-router.post("/auth/token/", Auth.GetnewAccessToken);
+router.post("/auth/token/", GetnewAccessToken);
 
 export default router;

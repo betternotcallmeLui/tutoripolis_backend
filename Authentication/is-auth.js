@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import * as api_key from '../config/config';
+import * as api_key from '../config/config.js';
 
 export const authentication = (req, res, next) => {
     let access_token = req.headers['authorization'];

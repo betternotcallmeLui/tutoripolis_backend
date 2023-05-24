@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { stripePayment, stripeCourse } from '../controllers/stripe';
-import { authentication } from '../Authentication/is-auth';
+import { stripePayment, stripeCourse } from '../controllers/stripe.controller.js';
+import { authentication } from '../Authentication/is-auth.js';
 
 const router = Router();
 

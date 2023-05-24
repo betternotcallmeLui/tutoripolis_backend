@@ -1,8 +1,9 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import User from '../model/user';
 import { OAuth2Client } from 'google-auth-library';
-import { googleAuth, accessToken, accessTokenLife, refreshToken, refreshTokenLife } from '../config/config';
+
+import User from '../model/user.model.js';
+import { googleAuth, accessToken, accessTokenLife, refreshToken, refreshTokenLife } from '../config/config.js';
 
 const client = new OAuth2Client(googleAuth);
 

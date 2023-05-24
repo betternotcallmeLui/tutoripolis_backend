@@ -1,8 +1,8 @@
 import puppeteer from 'puppeteer';
 import path from 'path';
 
-import Course from '../model/courses';
-import User from '../model/user';
+import Course from '../model/courses.model.js';
+import User from '../model/user.model.js';
 
 export const CoursePage = async (req, res, next) => {
     try {

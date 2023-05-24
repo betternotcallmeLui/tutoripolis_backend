@@ -1,4 +1,7 @@
 import path from 'path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 import http from 'http';
 import dotenv from 'dotenv';
 import cors from 'cors';
@@ -10,28 +13,29 @@ import mongoose from 'mongoose';
 import express from 'express';
 import bodyParser from 'body-parser';
 
-import socketio from 'socket.io';
+import { Server } from 'socket.io';
 
-import config from './config/config.js';
+import * as config from './config/config.js';
 
-import authRoutes from './routes/auth.js';
-import teacherRoutes from './routes/teacher.js';
-import homeRoutes from './routes/homepage.js';
-import courseRoutes from './routes/coursepage.js';
-import stripeRoute from './routes/stripe.js';
+import authRoutes from './routes/auth.routes.js';
+import teacherRoutes from './routes/teacher.routes.js';
+import homeRoutes from './routes/homePage.routes.js';
+import courseRoutes from './routes/coursePage.routes.js';
+import stripeRoute from './routes/stripe.routes.js';
 
 const { mongo, redisHost, redisPort, redisPassword } = config;
 
 const MONGODB_URI = mongo;
 const app = express();
 const server = http.createServer(app);
-const io = socketio(server);
+const io = new Server(server);
 
 const client = redis.createClient({
     host: redisHost,
     port: redisPort,
     password: redisPassword
 });
+
 
 io.on('connect', (socket) => {
     socket.on('join', ({ UserName, room, userId }, callback) => {
@@ -135,6 +139,7 @@ io.on('connect', (socket) => {
         console.log('disconnected');
     });
 });
+
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));

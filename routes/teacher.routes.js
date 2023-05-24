@@ -9,8 +9,8 @@ import {
     editCourse,
     updateCourse,
     watchedByUsers
-} from '../controllers/teacher';
-import { authentication } from '../Authentication/is-auth';
+} from '../controllers/teacher.controller.js';
+import { authentication } from '../Authentication/is-auth.js';
 
 const router = Router();
 

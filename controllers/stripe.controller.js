@@ -1,6 +1,6 @@
-import { stripePayment as stripePaymentKey } from '../config/config';
+import { stripePayment as stripePaymentKey } from '../config/config.js';
 import stripe from 'stripe';
-import Course from '../model/courses';
+import Course from '../model/courses.model.js';
 
 const stripePaymentK = stripe(stripePaymentKey);
 

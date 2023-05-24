@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { authentication } from '../Authentication/is-auth';
-import { CoursePage, Bookmark, ShowBookmark, unbookmark, rating, pdf } from '../controllers/coursepage';
+import { authentication } from '../Authentication/is-auth.js';
+import { CoursePage, Bookmark, ShowBookmark, unbookmark, rating, pdf } from '../controllers/coursepage.controller.js';
 
 const router = Router();
 
